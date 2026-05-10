@@ -20,6 +20,9 @@ if (
     addXP(10);
   }
 }
+  function getToday() {
+  return new Date().toDateString();
+}
   const today = getToday();
 
   const dayCount = user.quest.daysCompleted.length + 1;
