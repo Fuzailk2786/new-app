@@ -1,19 +1,22 @@
-<!-- BACK BUTTON -->
-  <div style="padding:12px;">
-    <a href="index.html" style="text-decoration:none;">⬅️ Back</a>
+<header class="glass-header">
+    <a href="index.html" class="back-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+    </a>
+    <h2 class="premium-gold-text">Nearby Mosques</h2>
+</header>
 
+<main class="container">
+    <div class="action-card ultra-rounded">
+        <p>Find a place to pray nearby</p>
+        <button id="find-btn" class="btn-solid" onclick="findMosques()">
+            <span class="icon">📍</span> Find Near Me
+        </button>
+    </div>
 
-<h2>🕌 Nearby Mosques</h2>
-<button onclick="findMosques()">Find Near Me</button>
-<ul id="mosques"></ul>
-js/mosque.js
+    <div id="status-msg" class="status-toast hidden"></div>
 
-<!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/design-system.css">
-  <link rel="stylesheet" href="css/components.css">
-
-  <!-- JS -->
-  <script src="js/app.js" defer></script>
+    <ul id="mosque-list" class="card-stack">
+        </ul>
+</main>
