@@ -11,7 +11,15 @@ function loadQuest() {
       lastCompleted: null
     };
   }
-
+if (
+  user.lastQuranDate === today &&
+  user.quizCompletedDate === today
+) {
+  if (!user.questCompletedDates.includes(today)) {
+    user.questCompletedDates.push(today);
+    addXP(10);
+  }
+}
   const today = getToday();
 
   const dayCount = user.quest.daysCompleted.length + 1;
