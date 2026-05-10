@@ -27,7 +27,24 @@ function getCoins() {
 function getStreak() {
   return Number(localStorage.getItem("streak")) || 0;
 }
+function updateStreak() {
+  const user = getUser();
+  const today = new Date().toDateString();
 
+  if (user.lastActiveDate === today) return;
+
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+
+  if (user.lastActiveDate === yesterday.toDateString()) {
+    user.streak += 1;
+  } else {
+    user.streak = 1;
+  }
+
+  user.lastActiveDate = today;
+  saveUser(user);
+}
 // ---------- SETTERS ----------
 function setXP(val) {
   localStorage.setItem("xp", val);
