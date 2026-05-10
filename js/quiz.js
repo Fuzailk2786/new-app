@@ -32,7 +32,9 @@ window.submitQuiz = function () {
     const selected = document.querySelector(`input[name="q${i}"]:checked`);
     if (selected && selected.value === q.answer) score++;
   });
-
+function getToday() {
+  return new Date().toDateString();
+}
   const user = JSON.parse(localStorage.getItem("islamicQuestz_user"));
   user.quizCompletedDate = today;
   localStorage.setItem("islamicQuestz_user", JSON.stringify(user));
