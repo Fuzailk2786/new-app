@@ -19,7 +19,12 @@ if (user.quizCompletedDate === today) {
 
   quizContainer.innerHTML += `<button onclick="submitQuiz()">Submit</button>`;
 }
+const today = new Date().toDateString();
 
+user.quizCompletedDate = today;
+addXP(20);
+updateStreak();
+saveUser(user);
 window.submitQuiz = function () {
   let score = 0;
 
