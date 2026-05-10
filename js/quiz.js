@@ -35,6 +35,7 @@ window.submitQuiz = function () {
 function getToday() {
   return new Date().toDateString();
 }
+  
   const user = JSON.parse(localStorage.getItem("islamicQuestz_user"));
   user.quizCompletedDate = today;
   localStorage.setItem("islamicQuestz_user", JSON.stringify(user));
