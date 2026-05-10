@@ -60,7 +60,27 @@ function setStreak(val) {
   localStorage.setItem("streak", val);
   updateUI();
 }
+function showXPToast(text) {
+  const toast = document.createElement("div");
+  toast.innerText = text;
+  toast.style = `
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4caf50;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+  `;
+  document.body.appendChild(toast);
 
+  setTimeout(() => toast.remove(), 2000);
+}
+showXPToast("+20 XP 🎉");
+showXPToast("🔥 Streak continues!");
+``
 // ---------- ADD FUNCTIONS ----------
 function addXP(val) {
   setXP(getXP() + val);
